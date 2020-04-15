@@ -1,9 +1,30 @@
 # Abril15
+## Web Service
+
+Cliente -----> Web -----> Web Service (Service)
+
+* SOAP (Web Service)
+  * Tecnicamente es mas complicado
+  * WSDL (Descriptor)
+  * XML
+  * Esquema.
+  * <cliente><idcliente type="integer">20</idcliente></cliente>
+* REST
+  * Es mas sencillo
+  * No tiene tiene descriptor.
+  * JSON (en teoria REST admite cualquier tipo de formato)
+  * No tiene Esquema
+  * {"idcliente":"20"}
+
+
+
+
+
 Abril15
 
 Puntos de hoy:
 
-* Java Empresarial JAVA EE
+* Java Empresarial JAVA EE  File -> New Project -> Java Enterprise -> Enterprise Application
 * JPA y relacion muchos es a uno.
 * JSF y CDI (Bean Manejado)
 * EJB con conexion a la base de datos.
@@ -73,7 +94,7 @@ Necesitamos crear un sistema para ingresar y listar facturas.
 <h:dataTable value = "#{nombreBean.campo}" var = "alias">
   
 </h:dataTable>  
-```             
+```
 
 ###  boton
 
@@ -123,7 +144,7 @@ tambien se puede hacer
          <h:outputText value =v "#{beanManejado.campo}"  rendered = "#{not beanManejado.editando}" />
 </h:column>
 
-``` 
+```
 
 ```html
 <h:column>
@@ -132,7 +153,7 @@ tambien se puede hacer
          <f:setPropertyActionListener target = "#{userData.employee}" value = "#{employee}" />
          </h:commandButton>
 </h:column>
-``` 
+```
 
 
 
