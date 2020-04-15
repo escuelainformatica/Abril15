@@ -81,6 +81,14 @@ Necesitamos crear un sistema para ingresar y listar facturas.
   <h:commandButton value = "Click" action = "#{nombreBean.Funcion}" />
 ```
 
+#### boton con argumento
+
+```xml
+<h:commandButton action="#{nombreBean.Funcion}" value="Click">
+    <f:setPropertyActionListener target="#{campo}" value="hola" />
+</h:commandButton>
+```
+
 ###  formulario
 
 ```xml
@@ -105,7 +113,28 @@ tambien se puede hacer
 #{nombreBean.campo}
 ```
 
-### output text
+### columna (debe definirse dentro de un datatable
+
+
+```html
+<h:column>
+         <f:facet name = "header">Columna Nombre</f:facet>
+         <h:inputText value = "#{beanManejado.campo}"  rendered = "#{beanManejado.editando}" />
+         <h:outputText value =v "#{beanManejado.campo}"  rendered = "#{not beanManejado.editando}" />
+</h:column>
+
+``` 
+
+```html
+<h:column>
+         <f:facet name = "header">Edit</f:facet>
+         <h:commandButton value = "Edit" action = "#{userData.editEmployee}" rendered = "#{not employee.canEdit}">        
+         <f:setPropertyActionListener target = "#{userData.employee}" value = "#{employee}" />
+         </h:commandButton>
+</h:column>
+``` 
+
+
 
 
 ## Argumentos
@@ -113,6 +142,7 @@ tambien se puede hacer
 * value = "#{beanManejado.campo}"   Asigna un valor a un objeto   
 * var = "alias"  Asigna una variable como alias para una de las filas de los datos a mostrar
 * rendered = "#{beanManejado.campo}" o "#{not beanManejado.campo}"  Solo se mostrara si el valor es verdadero.  
+* action ="#{beanManejado.function}" llama a una funcion.
 
 
 
