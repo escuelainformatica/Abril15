@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 public class FacturaDetalle {
@@ -17,6 +19,7 @@ public class FacturaDetalle {
     private String descripcion;
     private int cantidad;
     private int precioUnitario;
+    
     
     @ManyToOne
     private Factura factura;
@@ -78,9 +81,7 @@ public class FacturaDetalle {
         this.precioUnitario = precioUnitario;
     }
 
-    /**
-     * @return the factura
-     */
+    @XmlTransient // no serialize (con xml este campo)
     public Factura getFactura() {
         return factura;
     }

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -17,6 +18,7 @@ public class Factura {
     private String direccionCliente;
     
     @OneToMany
+    @JoinColumn(name="id_factura") // el nombre de la columna
     private List<FacturaDetalle> facturaDetalle;
     
     
