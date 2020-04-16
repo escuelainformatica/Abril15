@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://pcjc:8080/FacturaWS/FacturaWS?wsdl" uri="src/conf/xml-resources/web-service-references/FacturaWS/wsdl/pcjc_8080/FacturaWS/FacturaWS.wsdl"/>
+    <system systemId="http://pcjc:8080/FacturaWS/FacturaWS?xsd=1" uri="src/conf/xml-resources/web-service-references/FacturaWS/wsdl/pcjc_8080/FacturaWS/FacturaWS.xsd_1.xsd"/>
+</catalog>
