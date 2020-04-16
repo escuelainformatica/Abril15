@@ -5,6 +5,8 @@ import cl.cocacola.entidades.Factura;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -36,6 +38,10 @@ public class FacturaEJB {
     // @Transactional
     
     public void insertar(Factura factura) {
-        em.persist(factura); // save()
+        try {
+            em.persist(factura); // save()
+        } catch(Exception ex) {
+            
+        }
     }
 }

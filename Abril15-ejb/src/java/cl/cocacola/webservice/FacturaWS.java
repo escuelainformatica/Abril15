@@ -23,6 +23,17 @@ public class FacturaWS {
         return facturaEJB.listar();
     }
     
+    
+    @WebMethod()
+    public String insertar(Factura factura) {
+        try {
+            facturaEJB.insertar(factura);
+            return "ok";
+        } catch(Exception ex) {
+             return "ERROR DE CODIGO "+ex.getMessage();
+        }
+       
+    }
 
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {

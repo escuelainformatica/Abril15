@@ -1,6 +1,7 @@
 
 package cl.cocacola.entidades;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,9 @@ public class FacturaDetalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFacturaDetalle;
     
-    private String descripcion;
+    @ManyToOne //(cascade = CascadeType.PERSIST)
+    private ProductoFactura productoFactura;
+ 
     private int cantidad;
     private int precioUnitario;
     
@@ -39,19 +42,6 @@ public class FacturaDetalle {
         this.idFacturaDetalle = idFacturaDetalle;
     }
 
-    /**
-     * @return the descripcion
-     */
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    /**
-     * @param descripcion the descripcion to set
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 
     /**
      * @return the cantidad
@@ -91,6 +81,20 @@ public class FacturaDetalle {
      */
     public void setFactura(Factura factura) {
         this.factura = factura;
+    }
+
+    /**
+     * @return the productoFactura
+     */
+    public ProductoFactura getProductoFactura() {
+        return productoFactura;
+    }
+
+    /**
+     * @param productoFactura the productoFactura to set
+     */
+    public void setProductoFactura(ProductoFactura productoFactura) {
+        this.productoFactura = productoFactura;
     }
     
     

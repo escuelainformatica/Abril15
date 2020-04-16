@@ -3,6 +3,7 @@ package cl.cocacola.entidades;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,7 +18,7 @@ public class Factura {
     private String nombreCliente;
     private String direccionCliente;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name="id_factura") // el nombre de la columna
     private List<FacturaDetalle> facturaDetalle;
     
